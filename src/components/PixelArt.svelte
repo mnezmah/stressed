@@ -1,4 +1,6 @@
 <script>
+import Table from './Table.svelte'
+
   let table = false;
   let width = 0;
   let height = 0;
@@ -16,35 +18,18 @@
   };
 
   function changeColor(color, element) {
-    console.log("working?");
+    console.log("working?, element is ", element);
     tableCell = element;
     element.style.background = color;
     element.oncontextmenu = () => {
-      element.style.background = "white";
+    element.style.background = "white";
       return false;
     };
   }
 </script>
 
 <style>
-  table,
-  tr,
-  td {
-    border: 1px solid #bfecf0;
-  }
-
-  table {
-    border-collapse: collapse;
-    margin: 0 auto;
-  }
-
-  tr {
-    height: 20px;
-  }
-
-  td {
-    width: 20px;
-  }
+ 
 
   input[type="number"] {
     width: 6em;
@@ -72,102 +57,15 @@
 <h2>Design Canvas</h2>
 <table id="pixel_canvas" />
 {#if table}
-  <tr>
-    <td on:click={() => changeColor(selectedColor, this)} />
-    <td />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td on:mousedown={() => changeColor(selectedColor, this)} />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
-  <tr>
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-    <td />
-  </tr>
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
+<Table on:changecolor={changeColor} selectedColor={selectedColor} />
 {/if}
+
