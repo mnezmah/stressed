@@ -1,0 +1,19 @@
+<script>
+  //let tableCell;
+
+  function changeColor(color, element) {
+    //tableCell = element;
+    element.style.color = color;
+  }
+</script>
+
+<table>
+  <tr>
+    <td on:click={() => changeColor('red', this)}>Cell</td>
+    <td on:click={() => changeColor('blue', this)}>Cell</td>
+  </tr>
+</table>
+
+__________________
+
+bind:this={tableCell}

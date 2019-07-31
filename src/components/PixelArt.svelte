@@ -12,28 +12,18 @@
 
   const saveColor = e => {
     selectedColor = e.target.value;
-    console.log("COLOR: ", selectredColor);
+    console.log("COLOR: ", selectedColor);
   };
 
-function changeColor(color, element) {
-  console.log('working?')
-  tableCell = element
-  element.style.background = color
-}
-
-  const onColor = (dual, color, element) => {
-    // tableCell = element
-    console.log("am i clicking?");
-    tableCell.oncontextmenu = () => false;
-    switch (dual.which) {
-      case 1:
-        tableCell.style.background = color;
-        break;
-      case 3:
-        tableCell.style.background = "#FFF";
-        break;
-    }
-  };
+  function changeColor(color, element) {
+    console.log("working?");
+    tableCell = element;
+    element.style.background = color;
+    element.oncontextmenu = () => {
+      element.style.background = "white";
+      return false;
+    };
+  }
 </script>
 
 <style>
@@ -82,22 +72,15 @@ function changeColor(color, element) {
 <h2>Design Canvas</h2>
 <table id="pixel_canvas" />
 {#if table}
-  <tr >
-    <td on:click={() => changeColor(selectedColor, this)}  />
-    <td 
-    on:mousedown={onColor} 
-    <!-- bind:this={tableCell} -->
-    />
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
-    <td on:mousedown={() => changeColor(selectedColor, this)}/>
+  <tr>
+    <td on:click={() => changeColor(selectedColor, this)} />
     <td />
-    <td />
-    <td />
-    <td />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
+    <td on:mousedown={() => changeColor(selectedColor, this)} />
     <td />
     <td />
     <td />
