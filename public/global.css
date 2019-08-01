@@ -8,12 +8,14 @@ html, body {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 
 body {
-	background: #EAF4A8;
+	background: url("https://images.pexels.com/photos/2088205/pexels-photo-2088205.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
 	color: #333;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
@@ -65,4 +67,16 @@ button:active {
 
 button:focus {
 	border-color: #666;
+}
+
+.progress-value {
+	font-size: 25%;
+	display: none;
+}
+
+.progressbar {
+	position: absolute;
+	top: 20%;
+	left: 37%;
+  height: 60%;
 }

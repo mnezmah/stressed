@@ -4,9 +4,10 @@ import { createEventDispatcher } from "svelte"
 const dispatch = createEventDispatcher()
 
 export let selectedColor
-let tableCell
+export let tableCell 
 
 const onChangeColor = (e) => {
+  tableCell= tableCell
   dispatch("changecolor", selectedColor)
 }
 
